@@ -1,0 +1,83 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux16.hdl
+/**
+ * 16-bit multiplexor: 
+ * for i = 0, ..., 15:
+ * if (sel = 0) out[i] = a[i], else out[i] = b[i]
+ */
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    //// Replace this comment with your code.
+        Not(in=sel, out=notsel);
+
+        And(a=a[0], b=notsel, out=ansel0); //selの元入力が0の時にaの入力が出力される
+        And(a=b[0], b=sel, out=bsel0); //selの元入力が1の時にbが出力される
+        Or(a=ansel0, b=bsel0, out=out[0]);
+
+        And(a=a[1], b=notsel, out=ansel1); //selの元入力が0の時にaの入力が出力される
+        And(a=b[1], b=sel, out=bsel1); //selの元入力が1の時にbが出力される
+        Or(a=ansel1, b=bsel1, out=out[1]);
+
+        And(a=a[2], b=notsel, out=ansel2); //selの元入力が0の時にaの入力が出力される
+        And(a=b[2], b=sel, out=bsel2); //selの元入力が1の時にbが出力される
+        Or(a=ansel2, b=bsel2, out=out[2]);
+
+        And(a=a[3], b=notsel, out=ansel3); //selの元入力が0の時にaの入力が出力される
+        And(a=b[3], b=sel, out=bsel3); //selの元入力が1の時にbが出力される
+        Or(a=ansel3, b=bsel3, out=out[3]);        
+
+        And(a=a[4], b=notsel, out=ansel4); //selの元入力が0の時にaの入力が出力される
+        And(a=b[4], b=sel, out=bsel4); //selの元入力が1の時にbが出力される
+        Or(a=ansel4, b=bsel4, out=out[4]);
+
+        And(a=a[5], b=notsel, out=ansel5); //selの元入力が0の時にaの入力が出力される
+        And(a=b[5], b=sel, out=bsel5); //selの元入力が1の時にbが出力される
+        Or(a=ansel5, b=bsel5, out=out[5]);
+
+        And(a=a[6], b=notsel, out=ansel6); //selの元入力が0の時にaの入力が出力される
+        And(a=b[6], b=sel, out=bsel6); //selの元入力が1の時にbが出力される
+        Or(a=ansel6, b=bsel6, out=out[6]);
+
+        And(a=a[7], b=notsel, out=ansel7); //selの元入力が0の時にaの入力が出力される
+        And(a=b[7], b=sel, out=bsel7); //selの元入力が1の時にbが出力される
+        Or(a=ansel7, b=bsel7, out=out[7]);
+
+        And(a=a[8], b=notsel, out=ansel8); //selの元入力が0の時にaの入力が出力される
+        And(a=b[8], b=sel, out=bsel8); //selの元入力が1の時にbが出力される
+        Or(a=ansel8, b=bsel8, out=out[8]);
+
+        And(a=a[9], b=notsel, out=ansel9); //selの元入力が0の時にaの入力が出力される
+        And(a=b[9], b=sel, out=bsel9); //selの元入力が1の時にbが出力される
+        Or(a=ansel9, b=bsel9, out=out[9]);
+
+        And(a=a[10], b=notsel, out=ansel10); //selの元入力が0の時にaの入力が出力される
+        And(a=b[10], b=sel, out=bsel10); //selの元入力が1の時にbが出力される
+        Or(a=ansel10, b=bsel10, out=out[10]);        
+
+        And(a=a[11], b=notsel, out=ansel11); //selの元入力が0の時にaの入力が出力される
+        And(a=b[11], b=sel, out=bsel11); //selの元入力が1の時にbが出力される
+        Or(a=ansel11, b=bsel11, out=out[11]);
+
+        And(a=a[12], b=notsel, out=ansel12); //selの元入力が0の時にaの入力が出力される
+        And(a=b[12], b=sel, out=bsel12); //selの元入力が1の時にbが出力される
+        Or(a=ansel12, b=bsel12, out=out[12]);
+
+        And(a=a[13], b=notsel, out=ansel13); //selの元入力が0の時にaの入力が出力される
+        And(a=b[13], b=sel, out=bsel13); //selの元入力が1の時にbが出力される
+        Or(a=ansel13, b=bsel13, out=out[13]);
+
+        And(a=a[14], b=notsel, out=ansel14); //selの元入力が0の時にaの入力が出力される
+        And(a=b[14], b=sel, out=bsel14); //selの元入力が1の時にbが出力される
+        Or(a=ansel14, b=bsel14, out=out[14]);
+
+        And(a=a[15], b=notsel, out=ansel15); //selの元入力が0の時にaの入力が出力される
+        And(a=b[15], b=sel, out=bsel15); //selの元入力が1の時にbが出力される
+        Or(a=ansel15, b=bsel15, out=out[15]);
+
+}
+
